@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	
+  	<script type="text/javascript"  src="js/jquery-1.7.2.min.js"></script>
+  	<script type="text/javascript" 	src="js/jquery.min.js"></script>
+  	<script type="text/javascript"  src="js/jquery.url.js"></script>
+  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"  src="js/global.js?t=12"></script>
+  	<script type="text/javascript"	src="appjs/removeBinding.js"></script>
+  	<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+  	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">解绑账号</div>
+</header>
+<!-- 通用header end -->
+<div class="commen-form mt2">
+	<div class="form-item">
+		<label>证件类型</label>
+			<select id="idType">
+			  <option value="1">居民身份证</option>
+			  <option value="2">临时身份证</option>
+			  <option value="3">护照</option>
+			  <option value="4">军官证</option>
+			  <option value="5">港澳居民，台湾同胞通行证</option>
+			</select>
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>证件号码</label>
+		<input id="idNumber" onblur="checkIdNumber()" type="text" placeholder="证件号码" maxlength="21">
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>预留手机号</label>
+		<input id="reservePhone" onblur="checkPhone()" type="text" placeholder="预留手机号码" maxlength="11">
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>验证码</label>
+		<input id="validateCode" type="text" class="w50p"  placeholder="请输入验证码" maxlength="6">
+		<input id="getCode" type="button" value="获取验证码" class="get-code">
+	</div>
+	<div class="form-item">
+		<label>温馨提示：每天获取验证码不能超过3次。</label>
+	</div>
+	<button id="btnOk" class="submit-btn mt2">解除绑定</button>
+</div>
+
+</body>
+</html>

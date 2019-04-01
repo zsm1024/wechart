@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+	<script src="js/jquery.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var openid = sessionStorage.openid;
+			if(undefined == openid || "" == openid){
+				var code = getParam("code");
+				if(code){
+					$.showLoadMsg("加载中，请稍后...");
+					$.JsonSRpc(baseUrl+"/snsapibase", {code:code}, function(data){
+						$.hideLoadMsg();
+						if(data.errcode&&"0"==data.errcode){
+							openid = data.openid;
+							if(openid==undefined||""==openid){
+								message("信息获取失败!", function(flag){
+									wx.closeWindow();
+								});
+							}else{
+								sessionStorage.setItem("openid", openid);
+							}
+						}else{
+							message("获取用户信息失败！", function(flag){
+								wx.closeWindow();
+							});
+						}
+					});
+				}else{
+					message("获取信息失败，请重新进入页面", function(flag){
+						wx.closeWindow();
+					})
+					//htmlInit();
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">金融产品</div>
+</header>
+<!-- 通用header end -->
+<div class="jrcp">
+	<div class="title">简易贷</div>
+	<img src="img/1-1-pic.png" alt="">
+	<dl>
+		<dt>产品说明</dt>
+		<dd>贷款期限：12-36个月</dd><dd>首付40%起：H1、C30</dd><dd>首付50%起：H2、H5、H6、H7、H8、H9、风骏系列</dd>
+		<dt>产品特点</dt>
+		<dd>资料简便，只需身份证；</dd><dd>审批时效快，仅需4小时</dd>
+		<dt>还款方式</dt>
+		<dd>多种还款方式：</dd><dd>1）等额本息</dd><dd>2）等额本金</dd>
+	</dl>
+	<div class="title">快易贷</div>
+	<img src="img/1-2-pic.png" alt="">
+	<dl>
+		<dt>产品说明</dt>
+		<dd>H1、C30，首付50%起；</dd>
+		<dd>风骏系列，首付60%起；</dd>
+		<dd>H2、H5、H6、H7、H8 2.0T两驱舒适型，首付70%起；</dd>
+		<dd>H8其他车型、H9，贷款额<6万</dd>
+
+		<dt>贷款期限</dt>
+		<dd>风骏系列：12-36个月
+		</dd>
+		<dd>其他车型：12-60个月
+		</dd>
+		<dt>产品特点</dt>
+		<dd>资料简便，只需身份证；</dd><dd>审批时效快，仅需2小时；</dd><dd>等额本息还款，方便记忆​</dd>
+	</dl>
+	<div class="title">等额本息</div>
+	<img src="img/1-3-pic.png" alt="">
+	<dl>
+		<dt>产品说明</dt>
+		<dd>首付比例：20%起</dd><dd>贷款期限：12-60个月</dd>
+	</dd>
+		<dt>产品特点</dt>
+		<dd>在贷款利率不变的前提下，</dd>
+		<dd>月还款额不变</dd>
+		<dt>适用人群</dt>
+		<dd>月供相等方便记忆，适用于收入稳定，崇尚简单便捷生活的人士​</dd>
+	</dl>
+	<div class="title">等额本金</div>
+	<img src="img/1-4-pic.png" alt="">
+	<dl>
+		<dt>产品说明</dt>
+		<dd>首付比例：20%起</dd><dd>贷款期限：12-60个月</dd>
+		</dd>
+		<dt>产品特点</dt>
+		<dd>每月所还本金相等，
+		</dd>
+		<dd>月还款总额逐月递减</dd>
+		<dt>适用人群</dt>
+		<dd>适合前期月供支付能力高的客户​​</dd>
+	</dl>
+	<div class="title">随薪贷</div>
+	<img src="img/1-5-pic.png" alt="">
+	<dl>
+		<dt>产品说明</dt>
+		<dd>首付比例：20%起</dd><dd>贷款期限：12-60个月</dd><dd>尾款：20%或25%</dd>
+		</dd>
+		<dt>尾款处理方式</dt>
+		<dd>1）一次性清偿</dd>
+		<dd>2）最多12个月的展期</dd>
+		<dd>3）旧车置换新车</dd>
+
+		<dt>产品特点</dt>
+		<dd>低月供，月还款压力小，每月固定还款额，方便记忆，灵活的尾款处理方式 ​​</dd>
+		<dt>适用人群</dt>
+		<dd>希望减少月还款压力，对未来收入有较好的预期​</dd>
+	</dl>
+</div>
+
+</body>
+</html>

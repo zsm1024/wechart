@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	
+  	<script type="text/javascript"  src="js/jquery-1.7.2.min.js"></script>
+  	<script type="text/javascript" 	src="js/jquery.min.js"></script>
+  	<script type="text/javascript"  src="js/jquery.url.js"></script>
+  	<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp"></script>
+  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"  src="js/mobiscroll.custom-2.6.2.min.js"></script>
+	<script type="text/javascript"  src="js/global.js?t=12"></script>
+  	<script type="text/javascript"	src="appjs/home.js"></script>
+  		<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+	<script type="text/javascript"	src="js/touchslide.js"></script><!-- 轮播图js -->
+	<script type="text/javascript"	src="js/effect.js"></script><!-- 特效js -->
+</head>
+<body>
+<header class="home-header" style="border-bottom:rgba(255, 0, 0, 0) solid 0px">
+	<a href="cityselect.html" class="my-pos">
+		<span id="dingwei"></span>
+	</a>
+	<a href="messages.html" id="messageOk"><i class="news" id="messageErr"></i></a>
+</header>
+<!-- 图片轮播 begin -->
+<div id="slide-banner" class="slide-banner">
+	<div class="bd">
+		<ul>
+			<!-- <li><a class="pic" href="apply.html"><img src="img/banner7.jpg" width="100%" /></a></li> -->
+			<li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active2+"><img src='img/VV5S.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li>
+			<li>
+			<li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active1+"><img src='img/bannerA8.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li>
+			<li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active9+"><img src='img/bannerm6.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li>
+			<li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active6+"><img src='img/banner7.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li>
+			<li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active8+"><img src='img/banner8.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li>
+		<!-- 	<li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active4+"><img src='img/banner4.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li> -->
+			<!-- <li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active2+"><img src='img/banner1.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li> -->
+			<!-- <li><a class="pic" href="product.html"><img src="img/banner2.jpg" width="100%" /></a></li> -->
+			<!-- <li>
+			<script>
+	         document.write("<a class='pic' href="+cmsUrl_active1+"><img src='img/banner3.jpg' width='100%' /></a> ");
+	   		 </script>
+			</li> -->		
+		</ul>
+	</div>
+	<div class="hd">
+		<ul></ul>
+	</div>
+</div>
+<script type="text/javascript">
+	TouchSlide({ 
+		slideCell:"#slide-banner",
+		titCell:".hd ul", 
+		mainCell:".bd ul", 
+		effect:"leftLoop", 
+		autoPage:true,//自动分页
+		autoPlay:true, //自动播放
+		interTime:4000
+	});
+</script>
+<!-- 图片轮播 end -->
+<!-- 主导航 begin -->
+<nav class="home-nav">
+	<ul>
+		<li><a href="loancalc.html">车贷计算</a></li>
+		<li><a id="quotacesuan">额度测算</a></li>
+		<li><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxeba2859c6bbe5dc4&redirect_uri=http://wechatuat.gwmfc.cn/gwm-web-wechat/yidongjinjian/order.html&response_type=code&scope=snsapi_base&state=1#wechat_redirect">在线申请</a></li>
+		<li><a href="shop.html">网点查询</a></li>
+		<li><a href="javascript:void(0)" id="repayRecordQuery">近期还款</a></li>
+		<li><a href="javascript:void(0)" id="changecontact">变更联系方式</a></li>
+		<li><a href="javascript:void(0)" id="uploadcertificate">上传还款凭证</a></li>
+		<li><a href="javascript:void(0)" id="earlypay">提前还款</a></li>		
+		<li>
+		<script>
+         document.write("<a href="+cmsUrl_question+" class='flex'><div>常见问题<span>车贷申请 材料递交</span></div></a>")
+   		</script>				
+		</li>
+		<li><a href="javascript:void(0)" onclick="productClick()" class="flex"><div>金融产品<span>常规产品 灵活产品</span></div></a></li>
+	</ul>
+</nav>
+<!-- 主导航 end -->
+<section>
+<!-- 	<h3>常见问题</h3> -->
+<!-- 	<div class="question-scroll"> -->
+<!-- 		<div class="bd"> -->
+<!-- 			<ul class="infoList"> -->
+<!-- 				<li><a href="">申请贷款需要准备什么资料？</a></li> -->
+<!-- 				<li><a href="">2222222222222</a></li> -->
+<!-- 				<li><a href="">2333333333333333333</a></li> -->
+<!-- 			</ul> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </section> -->
+<!-- <script type="text/javascript"> -->
+<!-- // 		jQuery(".question-scroll").slide({mainCell:".bd ul",autoPage:true,effect:"topLoop",autoPlay:true,vis:1,interTime:4000}); -->
+<!-- 		</script> -->
+<!-- <section class="mt1" onclick="productClick()"> -->
+<!-- 	<h3>金融产品</h3> -->
+<!-- </section> -->
+<!-- <div class="home-products"> -->
+<!-- 	<img src="img/pic_product_home.png" onclick="productClick()" width="100%"> -->
+<!-- </div> -->
+<!-- <section class="mt1"> -->
+	<h3>筑梦行动</h3>
+</section>
+<a href=""><img src="img/pic_zmxd_home.png" width="100%"></a>
+<div class="home-tel">
+	全国服务热线：400-6527-606
+</div>
+<!-- 通用底部导航 begin -->
+<div class="tab-bar">
+	<ul>
+		<li class="curr"><a href="home.html">主页</a></li>
+		<li>
+		<script>
+         document.write("<a href="+cmsUrl_active+">最新活动</a> ");
+   		 </script>
+		</li>
+		<li><a href="scheme.html">专属方案</a></li>
+		<li><a href="myLoan.html">我的贷款</a></li>
+	</ul>
+</div>
+<!-- 通用底部导航 end -->
+</body>
+</html>

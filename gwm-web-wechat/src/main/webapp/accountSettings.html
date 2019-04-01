@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	
+	<script type="text/javascript"  src="js/jquery-1.7.2.min.js"></script>
+  	<script type="text/javascript" 	src="js/jquery.min.js"></script>
+  	<script type="text/javascript"  src="js/jquery.url.js"></script>
+  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"  src="js/global.js?t=12"></script>
+	<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+<script type="text/javascript">
+var openid = "";
+$(function (){
+	openid=sessionStorage.getItem("openid");
+	if(openid == null || openid=="" || undefined == openid ){
+		var code = getParam("code");
+		if(undefined == code || "" == code || code== null){
+			message("信息获取失败，请重新进入页面", function(flag){
+				wx.closeWindow();
+			});
+			return;
+		}else{
+			$.showLoadMsg("加载中，请稍后...");
+			$.JsonSRpc(baseUrl+ "/snsapibase",{code: code},function(data) {
+				$.hideLoadMsg();
+				if(data.errcode!=null && data.errcode!=null &&"0"==data.errcode){
+					openid = data.openid;
+					if(openid==undefined||""==openid){
+						message("信息获取失败，请重新进入页面", function(flag){
+							wx.closeWindow();
+						});
+						return;
+					}else{
+						sessionStorage.setItem("openid", openid);
+					}
+				}else{
+					message("信息获取失败，请重新进入页面", function(data){
+						wx.closeWindow();
+					});
+					return;
+				}
+			});
+		}
+	}
+	else{
+		sessionStorage.setItem("openid",openid);
+	}
+});
+
+	function getList() {
+
+		$.showLoadMsg("加载中，请稍后...");
+		$.JsonSRpc(baseUrl + "/personalInfo", {
+			openId : openid
+		}, function(data) {
+			$.hideLoadMsg();
+			if (data.errcode == "0") {
+				window.location.href = "./personalInfomation.html";
+			} else {
+				message(data.errmsg);
+			}
+		});
+	}
+</script>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">账号设置</div>
+</header>
+<!-- 通用header end -->
+<ul class="commen-nav-list mt1">
+	<li><a href="javascript:void(0)" onclick="getList()"><span>个人信息</span></a></li>
+	<li><a href="removeBinding.html"><span>解绑账号</span></a></li>
+	<li><a href="serviceAgreement.html"><span>服务协议</span></a></li>
+	<li><a href="opinion.html"><span>意见和反馈</span></a></li>
+	<li><a href="aboutUS.html"><span>关于我们</span></a></li>
+</ul>
+</body>
+</html>

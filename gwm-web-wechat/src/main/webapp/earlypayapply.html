@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+	<script src="js/jquery.min.js"></script>
+  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="appjs/earlypayapply.js"></script>
+		<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+		<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">提前还款</div>
+</header>
+<!-- 通用header end -->
+<div class="second-banner" style="height:2rem;">
+	<div class="re-value" style="padding-top:.4rem;">
+		<ul>
+			<li><i>还款金额</i></li>
+			<li>¥&nbsp;&nbsp;<p id="total"></p></li>
+			<li style="padding-top:.1rem;"><i>预留卡号</i></li>
+			<li>&nbsp;&nbsp;&nbsp;<p id="total_card" style="font-size:.17rem;">6222********2222</p></li>
+			<!-- <li id="contract_nbr"><span>合同号：</span></li>
+			<li id="asset_brand"><span>车型：</span></li> -->
+		</ul>
+	</div>
+</div>
+	<div class="commen-form mt2">
+	<div class="form-item">
+		<label>身份证验证：</label>
+		<input id="idno" onblur="myID()" maxlength="6" type="text" placeholder="身份证后六位">
+	</div>
+		<div class="check-item flex mt1" style="margin-top:-0.1rem !important;">
+		<input type="checkbox" id="agree">
+		<label for="agree">我已阅读并同意
+		</label>
+		<span id="confirmletter">《提前还款确认函》</span>
+	</div>
+	</div>
+	<div class="check-item flex mt1" style="margin-top:0.4rem !important;">
+		<button class="submit-btn">立即申请</button>
+	</div>
+
+</body>
+</html>

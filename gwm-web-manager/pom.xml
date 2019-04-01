@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.gwm</groupId>
+    <artifactId>gwm-aggregation</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>gwm-web-manager</artifactId>
+  <packaging>war</packaging>
+  <name>gwm-web-manager</name>
+  <description>后管模块</description>
+  <dependencies>
+<!-- https://mvnrepository.com/artifact/com.hynnet/json-lib -->
+		<dependency>
+			<groupId>com.hynnet</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+		</dependency>
+  <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.6</version>
+</dependency>
+  		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.21</version>
+		</dependency>
+  		<dependency>
+	  		<groupId>com.gwm</groupId>
+	  		<artifactId>gwm-db-entity</artifactId>
+	  		<version>0.0.1-SNAPSHOT</version>
+	  	</dependency>
+  		<dependency>
+	    	<groupId>org.springframework.boot</groupId> 
+	    	<artifactId>spring-boot-starter-web</artifactId>
+	    </dependency>
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		     <!-- Spring jdbctemplate支持 -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>org.apache.tomcat</groupId>
+		            <artifactId>tomcat-jdbc</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+  </dependencies>
+</project>

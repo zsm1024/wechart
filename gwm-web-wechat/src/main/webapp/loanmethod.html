@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+	<script src="js/jquery.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var openid = sessionStorage.openid;
+			if(undefined == openid || "" == openid){
+				var code = getParam("code");
+				if(code){
+					$.showLoadMsg("加载中，请稍后...");
+					$.JsonSRpc(baseUrl+"/snsapibase", {code:code}, function(data){
+						$.hideLoadMsg();
+						if(data.errcode&&"0"==data.errcode){
+							openid = data.openid;
+							if(openid==undefined||""==openid){
+								message("信息获取失败!", function(flag){
+									wx.closeWindow();
+								});
+							}else{
+								sessionStorage.setItem("openid", openid);
+							}
+						}else{
+							message("获取用户信息失败！", function(flag){
+								wx.closeWindow();
+							});
+						}
+					});
+				}else{
+					message("获取信息失败，请重新进入页面", function(flag){
+						wx.closeWindow();
+					})
+					//htmlInit();
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">贷款流程</div>
+</header>
+<!-- 通用header end -->
+<div class="dklc">
+	<div class="line"></div>
+	<ul>
+		<li>
+			Step 1 : 申请
+			<div class="intro">
+				选定您心仪的车型及金融产品，提交申请
+				<p>您需在汽车经销商处填写贷款申请表，授权书并提交相关审批资料。</p>
+			</div>
+		</li>
+		<li>
+			Step 2 : 审批
+			<div class="intro">
+				贷款审核及批复
+				<p>收到您的申请后，我们会电话与您沟通，根据情况可能需要您提供审核所需的补充资料。给出审批意见。</p>
+			</div>
+		</li>
+		<li>
+			Step 3 : 签合同
+			<div class="intro">
+				缴纳首付,签合同办理保险,抵押登记
+				<p>签订包括贷款合同，抵押合同，划款授权书等。缴纳首付、办理车辆相关手续并协助办理车辆抵押登记。</p>
+			</div>
+		</li>
+		<li>
+			Step 4 : 提车
+			<div class="intro">
+				享有爱车,按月还款
+				<p>享有爱车、按月还款。</p>
+			</div>
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>

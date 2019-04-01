@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>长城汽车金融</title>
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<link rel="stylesheet" href="../css/style.css">	
+		<link rel="stylesheet" href="../Mui/css/mui.css" />		
+		<link rel="stylesheet" href="../Mui/css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../Mui/css/icons-extra.css"/>	
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=63566119" charset="UTF-8"></script>
+	</head>
+	<body class="addAll">
+	<header class="commen-header">
+		<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+		<div class="title">贷款申请</div>	
+	</header>
+	<div class="order_flow ">
+		<label>
+			<span >1</span>
+			<p>注册</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span >2</span>
+			<p>贷款车型</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span class="fir">3</span>
+			<p>个人信息</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span>4</span>
+			<p>完成申请</p>
+		</label>
+	</div>
+	<div>
+	<h4 class="carInfo">地址信息</h4>
+	<div  class="mainInfo">
+		<div class="postAddress">
+			<h4 id="h4">家庭地址</h4>
+			<div class="mui-input-row mui-radio mui-left" >
+				<label>邮寄地址</label>
+				<input name="postAddress" id="postAddress1" value="1"  type="radio" checked>
+			</div>
+		</div>
+			
+	<form class="mui-input-group homeAd" action="" >		
+	   <div class="mui-input-row" id="HomeS">	
+			<label class="mui-navigate-right provS" href="#" ><span>省/市<i>*</i></span></label>	
+			<input class="proS choose" id="selJob" placeholder="请选择" readonly="readonly" name="homeCity"/>
+			<!--<select name="select" id="select_k1" class="proS">
+				<option>请选择</option>
+			</select>-->
+		</div>					
+		<div class="mui-input-row addressIn">
+			<div class="mui-input-row">
+		        <label>地址<i>*</i></label>
+		        <input type="text" id="homeAddress" class="mui-input-clear addHo" placeholder="请填写至单元门牌号/村/组" name="homeAddress">
+		    </div>
+		</div>
+		<div class="mui-input-row">
+	        <label>邮政编码<i>*</i></label>
+	        <input type="number" id="homePostCode" class="mui-input-clear numHo" placeholder="邮政编码" name="homePostCode">
+    	</div>	
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>房产类型<i>*</i></span></label>				
+			<select name="homeSelect" id="select_k1" class="homeS">
+				<option>请选择</option>
+			</select>
+		</div>	
+		<div class="mui-input-row calender">
+	        <label>起始时间<i>*</i></label>
+	        <input type="text" class="mui-input-clear" placeholder="请选择日期" id='result' name="homeTime">
+	        <span class="btn" data-options='{"type":"date","beginYear":1980,"endYear":2216}'>
+	        	<i class="mui-icon-extra mui-icon-extra-calendar icons"></i>
+	        </span>       
+    	</div>	  	
+    	 <!--<button id='demo2' data-options='{"type":"date","beginYear":1990,"endYear":2016}' class="btn mui-btn mui-btn-block">选择日期 ...</button>-->
+	</form>
+	<div class="postAddress">
+			<h4 id="h4">办公地址</h4>
+			<div class="mui-input-row mui-radio mui-left">				
+				<label>邮寄地址</label>
+				<input name="postAddress" id="postAddress2" value="2" type="radio">				
+			</div>
+		</div>
+	<form class="mui-input-group workAd" >		
+	   <div class="mui-input-row" id="workS">	
+			<label class="mui-navigate-right" href="#" ><span>省/市<i>*</i></span></label>
+			<input class="proS choose" id="selJob1" placeholder="请选择" readonly="readonly" name="workCity"/>
+		</div>	
+		<div class="mui-input-row addressIn">
+			<div class="mui-input-row">
+		        <label>地址<i>*</i></label>
+		        <input type="text" id="workAddress" class="mui-input-clear addHo" placeholder="请填写至单元门牌号/村/组"name="workAddress" >
+		    </div>	
+		</div> 
+		<div class="mui-input-row">
+	        <label>邮政编码<i>*</i></label>
+	        <input type="number" class="mui-input-clear numHo" id="workPostCode" placeholder="邮政编码"name="workPostCode">
+    	</div>	
+    	<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>房产类型<i>*</i></span></label>				
+			<select name="workSelect" id="select_k2" class="homeS">
+				<option>请选择</option>
+			</select>
+		</div>	
+		<div class="mui-input-row calender">
+	        <label>起始时间<i>*</i></label>
+	        <input type="text" class="mui-input-clear" placeholder="请选择日期" id='results' name="workTime">
+	        <span class="btn1" data-options='{"type":"date"}'>
+	        	<i class="mui-icon-extra mui-icon-extra-calendar icons"></i>
+	        </span>       
+    	</div>	
+	</form>	
+</div>
+	<div class="commen-bottom"> 
+		<a href="javascript:void(0)" onclick="backClick()" class="pre">返回个人基本信息</a>
+		<a class="next">完善个人工作信息</a>		
+	</div>	
+	</body>
+	<script type="text/javascript" 	src="../js/jquery.min.js"></script>
+	<script src="../js/global.js?v=2" type="text/javascript"></script>
+  	<script src="../js/mui.js?v=3" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://acs.gwmfc.com/Scripts/code_A.js" charset="utf-8"></script>
+	<script src="js/addressIndo.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$("#selJob").focus(function(){
+	        document.activeElement.blur();
+	    }); 
+		$("#selJob1").focus(function(){
+	        document.activeElement.blur();
+	   });
+		
+	</script>
+</html>

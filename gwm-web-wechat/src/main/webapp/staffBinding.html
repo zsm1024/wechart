@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	
+  	
+  	
+</head>
+
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">内部员工绑定</div>
+</header>
+<!-- 通用header end -->
+<div class="commen-form mt2">
+	<div class="form-item">
+		<label>员工类型</label>
+			<select id="staffType">
+			  <option value="1">信贷专员</option>
+			  <option value="2">销售专员</option>
+			  <option value="3">内部员工</option>
+			</select>
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>员工姓名</label>
+		<input id="staffName" type="text" placeholder="员工姓名" maxlength="21">
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>员工电话</label>
+		<input id="staffPhone" onblur="checkPhone()" type="text" placeholder="员工电话" maxlength="11">
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>员工身份证号</label>
+		<input id="idNumber" onblur="checkIdNumber()" type="text" placeholder="身份证号" maxlength="18">
+		<em></em>
+	</div>
+	<div class="form-item">
+		<label>员工工号</label>
+		<input id="jobNumber"  type="text" placeholder="员工工号" maxlength="10">
+		<em></em>
+	</div>
+
+	<button id="btnBinding"  class="submit-btn mt2">绑定</button>
+			 
+			 
+</div>
+<script type="text/javascript" 	src="js/jquery.min.js"></script>
+<script type="text/javascript"  src="js/jquery.url.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript"  src="js/global.js?t=12"></script>
+<script type="text/javascript"	src="appjs/bindingStaff.js"></script>
+<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</body>
+</html>

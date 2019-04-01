@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>长城汽车金融</title>
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<link rel="stylesheet" href="../css/style.css">	
+		<link rel="stylesheet" href="../Mui/css/mui.css" />	
+		<link rel="stylesheet" href="../Mui/css/icons-extra.css" />
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=63566119" charset="UTF-8"></script>
+	</head>
+	<body class="addAll">
+		<header class="commen-header">
+		<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+		<div class="title">贷款申请</div>	
+	</header>
+		<div class="order_flow ">
+			<label>
+				<span >1</span>
+				<p>注册</p>
+			</label>
+			<p class="line"></p>
+			<label>
+				<span >2</span>
+				<p>贷款车型</p>
+			</label>
+			<p class="line"></p>
+			<label>
+				<span class="fir">3</span>
+				<p>个人信息</p>
+			</label>
+			<p class="line"></p>
+			<label>
+				<span>4</span>
+				<p>完成申请</p>
+			</label>
+	</div>
+	<div class="emer ">
+		<h4 class="carInfo">紧急联系人信息</h4>
+		<p>提示：如果您已婚请务必以您丈夫/妻子作为紧急联系人之一</p>
+	</div>	
+	<div class="mainInfo">
+	<form class="mui-input-group" action="">	
+	<div class="old emerFir">	
+	<h4 class="h4">紧急联系人一</h4>
+			
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>与申请人关系<i>*</i></span></label>				
+			<select name="Firrelation" id="select_k1" class="relation">
+				<option>请选择</option>
+			</select>
+		</div>	
+	    <div class="mui-input-row">
+	        <label>姓名<i>*</i></label>
+	        <input type="text" class="mui-input-clear selfName" placeholder="请填写紧急联系人姓名" id="FirrelationName" name="FirrelationName">
+	    </div>
+	    <div class="mui-input-row">
+	        <label>手机<i>*</i></label>
+	        <input type="text" class="mui-input-clear phone"  placeholder="请填写现在使用的电话号码" id="FirrelationPhone" name="FirrelationPhone">
+	    </div>
+	     <div class="mui-input-row">
+	        <label>现居住地</label>
+	        <input type="text" class="mui-input-clear homeNow" placeholder="请填写现居地址"name="FirrelationAddress" id="FirrelationAddress">	       
+		</div>
+		<div class="mui-input-row">
+			<label class="mui-navigate-right">证件类型<i class="mus">*</i></label>
+		
+			<select name="UserEduc" id="cardType" class="cardType">			
+				<option>请选择</option>				
+			</select>	
+		</div>
+	     <div class="mui-input-row">
+	        <label>证件号<i class="mus">*</i></label>
+	         <input type="text" class="mui-input-clear selfInd" placeholder="请填写有效的证件号" name="FirrelationID" id="FirrelationID">	      
+	    </div>
+	    <div class="mui-input-row">
+		<label>月收入<i class="mus">*</i></label>
+		<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='5000000'>	
+		    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+		    <input class="mui-input-numbox selfMoney" type="number" name="FirrelationSalare" id="FirrelationSalare"/>
+		    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+		</div>
+ </div> 
+ </div>
+ <div class="old emerSec">	
+	<h4 class="h4">紧急联系人二</h4>			
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>与申请人关系<i>*</i></span></label>				
+			<select name="Secrelation" id="select_k1" class="relation">
+				<option>请选择</option>
+			</select>
+		</div>	
+	    <div class="mui-input-row">
+	        <label>姓名<i>*</i></label>
+	        <input type="text" class="mui-input-clear selfName" placeholder="请填写紧急联系人姓名" name="SecrelationName"  id="SecrelationName">
+	    </div>
+	    <div class="mui-input-row">
+	        <label>手机<i>*</i></label>
+	        <input type="text" class="mui-input-clear phone"  placeholder="请填写现在使用的电话号码" name="SecrelationPhone" id="SecrelationPhone">
+	    </div>
+	     <div class="mui-input-row">
+	        <label>现居住地</label>
+	        <input type="text" class="mui-input-clear homeNow" placeholder="请填写现居地址"name="SecrelationAddress" id="SecrelationAddress">	       
+		</div>
+		<div class="mui-input-row">
+			<label class="mui-navigate-right" href="#">证件类型<i class="mus">*</i></label>
+		
+			<select name="cardTypeTow" id="cardTypeTow" class="cardTypeTow">			
+				<option>请选择</option>				
+			</select>	
+		</div>
+	     <div class="mui-input-row">
+	        <label>证件号<i class="mus">*</i></label>
+	         <input type="text" class="mui-input-clear selfInd" placeholder="请填写有证件号" name="SecrelationID" id="SecrelationID">	      
+	    </div>
+	    <div class="mui-input-row">
+		<label>月收入<i class="mus">*</i></label>
+		<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='5000000'>	
+		    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+		    <input class="mui-input-numbox selfMoney" type="number" name="SecrelationSalare" id="SecrelationSalare"/>
+		    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+		</div>
+ </div>
+	</form>			
+	</div>
+	<div class="commen-bottom">
+	<a href="javascript:void(0)" onclick="backClick()" class="last_step">返回个人工作信息</a>
+	<a  class="perfect">下一步</a>	
+</div>
+	</body>
+	  	<script type="text/javascript" 	src="../js/jquery.min.js"></script>
+	  	<script type="text/javascript"  src="../js/jquery.url.js"></script>
+	  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript"  src="../js/global.js?t=12"></script>	 	
+		<script src="https://acs.gwmfc.com/Scripts/code_A.js" charset="utf-8"></script>
+	  	<script src="js/addEmergency.js" type="text/javascript" charset="utf-8"></script>
+	  	<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>	 
+		<script src="js/wechatapplication.js"></script>
+		<script src="js/Jquery.md5.js"></script>
+	  	
+</html>

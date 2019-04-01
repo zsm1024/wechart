@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	
+  	<script type="text/javascript"  src="js/jquery-1.7.2.min.js"></script>
+  	<script type="text/javascript" 	src="js/jquery.min.js"></script>
+  	<script type="text/javascript"  src="js/jquery.url.js"></script>
+  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"  src="js/global.js?t=12"></script>
+		<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+		<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+	var openid = sessionStorage.openid;
+	if(undefined == openid || "" == openid){
+		var code = getParam("code");
+		if(code){
+			$.showLoadMsg("加载中，请稍后...");
+			$.JsonSRpc(baseUrl+"/snsapibase", {code:code}, function(data){
+				$.hideLoadMsg();
+				if(data.errcode&&"0"==data.errcode){
+					openid = data.openid;
+					if(openid==undefined||""==openid){
+						message("信息获取失败!", function(flag){
+							wx.closeWindow();
+						});
+					}else{
+						sessionStorage.setItem("openid", openid);
+					}
+				}else{
+					message("获取用户信息失败！", function(flag){
+						wx.closeWindow();
+					});
+				}
+			});
+		}else{
+			message("获取信息失败，请重新进入页面", function(flag){
+				wx.closeWindow();
+			})
+		}
+	}
+	var url=window.location.search;
+	var basic="";
+	if (url.indexOf("?") != -1) {   
+		var strs = url.substring(1).split("&");
+		for (var i = 0; i < strs.length; i++) {
+			if("basic"==strs[i].split("=")[0]){
+				basic=unescape(strs[i].split("=")[1]);  
+			}
+		}
+		//从服务协议跳转来的，只展示基础绑定协议按钮隐藏
+		if(basic=="ok"){
+			$(".check-item").hide();
+			$(".check-item input").hide();
+			$(".check-item label").hide();
+			$(".check-item span").hide();
+			$(".submit-btn").hide();
+		}
+    }
+	$("#agree").click(function(){
+		if($("#agree").get(0).checked){
+			$("#btnOk").removeClass("disabled");
+		}
+		else{
+			$("#btnOk").removeClass("disabled");
+			$("#btnOk").addClass("disabled");
+		}
+	});
+	if($("#agree").get(0).checked){
+		$("#btnOk").removeClass("disabled");
+	}
+	else{
+		$("#btnOk").removeClass("disabled");
+		$("#btnOk").addClass("disabled");
+	}
+	$("#btnOk").click(function(){
+		if($("#agree").get(0).checked){
+			window.location.href="bindingAccount.html";
+		}
+		else{
+			message("请认真阅读本协议，同意后才可绑定。");
+			return false;
+		}
+	})
+})
+</script>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">绑定协议</div>
+</header>
+<!-- 通用header end -->
+<div class="bdxy">
+	<h1><b>天津长城滨银汽车金融有限公司</b><br><b>微信金融服务账号绑定协议</b></h1>
+	<p>本协议是申请人与天津长城滨银汽车金融有限公司（以下简称“长城汽车金融”）之间关于申请人绑定长城汽车金融微信服务号的相关事宜达成的协议，协议双方应予遵守。</p>
+	<b>一、关于“长城汽车金融微信金融服务”</b><p>长城汽车金融微信金融服务（以下简称“本服务”）是长城汽车金融通过微信渠道为<b>已在长城汽车金融成功办理贷款业务</b>的申请人提供的智能互动服务。申请人可通过本服务获取已还款信息、未来还款计划、提前还款申请等情况的相关服务（具体服务内容以长城汽车金融微信服务号发布的服务内容为准）。</p>
+	<b>二、声明与承诺</b><p><b>1、申请人确认：已仔细阅读了本协议，并特别注意了字体加黑的条款，对本协议条款的含义及相应的法律后果已全部知晓并充分理解，愿意遵守其全部内容；长城汽车金融已应要求对相关条款进行了充分的提示和说明。如果申请人不同意协议的任何内容，应终止后续操作。</b></p>
+	<p><b>2、申请人确认：在申请人（包括申请人的代理人，下同）同意接受本协议并申请开通相关业务功能时，长城汽车金融有理由相信申请人是具有完全民事权利和民事行为能力、能够独立承担民事责任的自然人。如不具备前述条件，申请人应该立刻停止申请使用本服务。</b></p>
+	<b>三、账户绑定与解除</b><p>1、申请人理解、知悉并同意使用长城汽车金融微信服务，并自愿将本人微信号与长城汽车金融微信服务号进行绑定。</p>
+	<p>2、当申请人按规定步骤操作以申请绑定本人微信号与长城汽车金融微信服务号时，长城汽车金融将根据申请人提供的证件号码、手机号码及短信验证码等其他相关内容，对申请人的身份及相关信息进行核实。有关信息经核实一致的，长城汽车金融将同意申请人的绑定申请，并向其发送绑定成功的通知。</p>
+	<p>3、绑定后，申请人可通过微信渠道向长城汽车金融查询相关贷款信息，因网络或微信运营商等原因导致无法正常提供微信服务的，不视为长城汽车金融违约。</p>
+	<p>4、解除绑定，当申请人不再关注长城汽车金融微信服务号或者主动解除绑定时，微信服务号绑定即解除。</p>
+	<b>四、使用规则</b><p><b>1、凡通过申请人绑定的微信号向长城汽车金融发送的数据均视为申请人本人发送的数据，申请人应对由此产生的后果负责。</b></p>
+	<p><b>2、为保障申请人个人的信息安全，请妥善保管申请人的手机、身份证件、微信账号密码、短信验证码等相关信息。如申请人的微信号被他人使用，由此造成信息泄露等，长城汽车金融不承担任何责任。如申请人对本服务显示的信息有任何疑问或想获得最准确的详细信息，请及时联系长城汽车金融客服热线4006527606进行咨询。</b></p>
+	<p>3、本协议未约定的事项，以长城汽车金融发布的网页公告、电子邮件、手机短信或微信等形式的书面解释为准。</p>
+	<p>4、因涉及网络数据传输及交换等原因，如通过微信服务查询到的信息与长城汽车金融授权的工作人员的正式答复不一致的，以后者为准。</p>
+	<b>五、协议生效、变更</b><p><b>1、自申请人选择本协议下方的“我已阅读并同意《微信金融服务账号绑定协议》”按钮，并点击 “确定”按钮，并将申请人的微信号与长城汽车金融微信服务号进行绑定后，本协议生效。</b></p>
+	<p><b>2、长城汽车金融有权以网页公告、电子邮件、手机短信或微信等形式通知申请人对本协议内容进行变更。如申请人不同意对本协议的变更，申请人有权向长城汽车金融申请变更或终止相关服务，如申请人在协议变更生效后继续使用本服务，则视为申请人同意长城汽车金融服务对本协议的变更。</b></p>
+	<b>六、法律适用及争议解决</b><p>1、本协议之订立、生效、解释、履行等均适用中华人民共和国法律（不包括香港特别行政区、澳门特别行政区及台湾地区法律）。</p>
+	<p>2、因本协议而产生的或与本协议相关的一切争议，如不能协商解决，向天津长城滨银汽车金融有限公司住所地人民法院提起诉讼。在诉讼期间，本协议不涉及争议部分的条款仍需履行。</p>
+	
+	<div class="check-item flex mt1">
+		<input type="checkbox" id="agree">
+		<label for="agree">我已阅读并同意
+		</label>
+		<span>《长城金融账号绑定协议》</span>
+	</div>
+	<button id="btnOk" class="submit-btn mt2 disabled">确定</button>
+</div>
+
+</body>
+</html>

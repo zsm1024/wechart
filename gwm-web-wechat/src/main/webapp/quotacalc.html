@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="appjs/quotacalc.js"></script>
+	<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">额度测算</div>
+</header>
+<!-- 通用header end -->
+<div class="edcs clearfix">
+	<div class="steps">
+		<div class="bar">
+			<div class="scale"></div>
+		</div>
+		<ul>
+			<li class="on"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="question">
+		<div class="q1" style="display: block;">
+			<h3>您的年龄</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q1-1" name="q1" value="1"><label for="q1-1">18-25岁</label></li>
+				<li><i></i><input type="radio" id="q1-2" name="q1" value="2"><label for="q1-2">26-35岁</label></li>
+				<li><i></i><input type="radio" id="q1-3" name="q1" value="3"><label for="q1-3">36-55岁</label></li>
+				<li><i></i><input type="radio" id="q1-4" name="q1" value="4"><label for="q1-4">56岁及以上</label></li>
+			</ul>
+		</div>
+		<div class="q2">
+			<h3>您的婚姻状况</h3>
+			<ul>
+				<li style="top:0.5rem"><i></i><input type="radio" id="q2-1" name="q2" value="1"><label for="q2-1">已婚</label></li>
+				<li><i></i><input type="radio" id="q2-2" name="q2" value="2"><label for="q2-2">单身</label></li>
+			</ul>
+		</div>
+		<div class="q3">
+			<h3>工作类型</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q3-1" name="q3" value="1"><label for="q3-1">国企、央企、事业单位</label></li>
+				<li><i></i><input type="radio" id="q3-2" name="q3" value="2"><label for="q3-2">外企</label></li>
+				<li><i></i><input type="radio" id="q3-3" name="q3" value="3"><label for="q3-3">股份公司、个体民营企业</label></li>
+				<li><i></i><input type="radio" id="q3-4" name="q3" value="4"><label for="q3-4">自由职业或其他</label></li>
+			</ul>
+		</div>
+		<div class="q4">
+			<h3>工作地点</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q4-1" name="q4" value="1"><label for="q4-1">北上广深</label></li>
+				<li><i></i><input type="radio" id="q4-2" name="q4" value="2"><label for="q4-2">省会城市</label></li>
+				<li><i></i><input type="radio" id="q4-3" name="q4" value="3"><label for="q4-3">其他城市</label></li>
+			</ul>
+		</div>
+		<div class="q5">
+			<h3>在现单位工作时间</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q5-1" name="q5" value="1"><label for="q5-1">2年以内</label></li>
+				<li><i></i><input type="radio" id="q5-2" name="q5" value="2"><label for="q5-2">2（含2年）-5年</label></li>
+				<li><i></i><input type="radio" id="q5-3" name="q5" value="3"><label for="q5-3">5（含5年）-8年</label></li>
+				<li><i></i><input type="radio" id="q5-4" name="q5" value="4"><label for="q5-4">8年以上（含8年）</label></li>
+			</ul>
+		</div>
+		<div class="q6">
+			<h3>贷款期限</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q6-1" name="q6" value="1"><label for="q6-1">1-12期</label></li>
+				<li><i></i><input type="radio" id="q6-2" name="q6" value="2"><label for="q6-2">13-24期</label></li>
+				<li><i></i><input type="radio" id="q6-3" name="q6" value="3"><label for="q6-3">25-36期</label></li>
+				<li><i></i><input type="radio" id="q6-4" name="q6" value="4"><label for="q6-4">37期以上</label></li>
+			</ul>
+		</div>
+		<div class="q7">
+			<h3>在购车城市的住房情况</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q7-1" name="q7" value="1"><label for="q7-1">自购房</label></li>
+				<li><i></i><input type="radio" id="q7-2" name="q7" value="2"><label for="q7-2">自建房</label></li>
+				<li><i></i><input type="radio" id="q7-3" name="q7" value="3"><label for="q7-3">租房</label></li>
+				<li><i></i><input type="radio" id="q7-4" name="q7" value="4"><label for="q7-4">其他</label></li>
+			</ul>
+		</div>
+		<div class="q8">
+			<h3>信用情况</h3>
+			<ul>
+				<li style="top:0.5rem"><i></i><input type="radio" id="q8-1" name="q8" value="1"><label for="q8-1">有信用卡</label></li>
+				<li><i></i><input type="radio" id="q8-2" name="q8" value="2"><label for="q8-2">无信用卡</label></li>
+			</ul>
+		</div>
+		<div class="q9">
+			<h3>家庭税后月收入</h3>
+			<ul>
+				<li><i></i><input type="radio" id="q9-1" name="q9" value="1"><label for="q9-1">小于5000</label></li>
+				<li><i></i><input type="radio" id="q9-2" name="q9" value="2"><label for="q9-2">5000-8000（含）</label></li>
+				<li><i></i><input type="radio" id="q9-3" name="q9" value="3"><label for="q9-3">8000-12000（含）</label></li>
+				<li><i></i><input type="radio" id="q9-4" name="q9" value="4"><label for="q9-4">12000-15000（含）</label></li>
+				<li><i></i><input type="radio" id="q9-5" name="q9" value="5"><label for="q9-5">15000以上</label></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="edcs-result clearfix">
+	<a href="" class="re flex">重新测算</a>
+	<h3>您的最高可贷额度为（元）：</h3>
+	<div class="result-wrap">
+		<span id="n5">0</span><span id="n4">0</span><span id="n3">0</span><span class="dot"></span><span id="n2">0</span><span id="n1">0</span><span id="n0">0</span>
+	</div>
+	<button class="submit-btn mt5 disabled" id="sub_btn">立即申请</button>
+	<div class="tips mt2">*此额度仅供参考，具体以贷款审批结果为准</div>
+</div>
+
+</body>
+</html>

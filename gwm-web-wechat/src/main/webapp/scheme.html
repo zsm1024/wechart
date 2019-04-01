@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+ 	<link rel="stylesheet" href="css/rangeSlider.css"><!-- 数值范围 css -->
+	<link rel="stylesheet" href="css/rangeSlider.skin.css"><!-- 数值范围 css -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/rangeSlider.min.js"></script><!-- 数值范围 js -->
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/area_data.js"></script>
+	<script type="text/javascript" src="appjs/scheme.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">专属方案</div>
+</header>
+<!-- 通用header end -->
+<div class="commen-form mt2">
+	<label>购车城市：</label>
+	<div class="form-item">
+		<select class="w50p" id="jxs_province">
+			<option value="-1">请选择省份</option>
+		</select><i></i>
+		<select class="w50p" id="jxs_city">
+			<option value="-1">请选择城市</option>
+			<i></i>
+		</select>
+	</div>
+	<div class="form-item">
+	<label>期望车价：</label>
+		<div class="rangslider">
+			<input type="text" id="range_1" name="" value="" />
+			<script>
+				$("#range_1").ionRangeSlider({
+					type: "double",
+					prefix: "¥",
+					postfix: "万",
+					min: 5,
+				    max: 28,
+				    from: 8,
+				    //from_min: 5,
+				    to: 12,
+					});
+
+			</script>
+		</div>
+	</div>
+	<div class="form-item">
+		<label>预计首付：</label>
+		<div class="rangslider">
+			<input type="text" id="range_2" name="" value="" />
+			<script>
+				$("#range_2").ionRangeSlider({
+					prefix: "¥",
+					postfix: "万",
+					min: 3,
+				    max: 21,
+				    from: 5,
+				    //from_min: 3
+					});
+			</script>
+		</div>
+	</div>
+	<div class="form-item">
+		<label>还款期数：</label>
+		<div class="rangslider">
+			<input type="text" id="range_3" name="" value="" />
+			<script>
+				$("#range_3").ionRangeSlider({
+					postfix: "期",
+					min: 12,
+				    max: 60,
+				    from: 24
+					});
+
+			</script>
+		</div>
+	</div>
+	<button class="submit-btn" id="promote">立即推荐</button>
+	<div class="tips mt2">
+		友情提示：网上售车报价为厂商指导价，实际月供以开票价为依据，详情拨打全国车贷申请热线：400-6527-606
+	</div>
+</div>
+<!-- 通用底部导航 begin -->
+<div class="tab-bar">
+	<ul>
+		<li><a href="home.html">主页</a></li>
+		<li>
+		<script>
+         document.write("<a href="+cmsUrl_active+">最新活动</a> ");
+   		 </script>
+		</li>
+		<li class="curr"><a href="scheme.html">专属方案</a></li>
+		<li><a href="myLoan.html">我的贷款</a></li>
+	</ul>
+</div>
+<!-- 通用底部导航 end -->
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<link rel="stylesheet" href="../Mui/css/mui.css" />	
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../Mui/css/mui.picker.min.css" />
+	<link rel="stylesheet" type="text/css" href="../Mui/css/icons-extra.css" />
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=63566119" charset="UTF-8"></script>
+	<style>
+		.mui-input-row:after{margin-left: -15px;}
+			.mui-navigate-right,.proS{text-align: left !important; height: 40px !important;line-height: 40px !important;padding: 0 10px !important}
+		
+		.zwxx{
+			text-align: center;
+			margin-top: 70px;
+		}
+		.foterBoten{
+			display:none;
+		}
+		.foterBoten{
+			width:100%;
+			position: fixed;
+			text-align: center;
+			background-color:#fff;
+			bottom: 10px;
+		}
+		.foterBoten a{
+			display: inline-block;
+			border-radius: .03rem;
+			width:90%;
+			font-size: 16px;
+			background: #e65757;
+			color: #fff;
+			height: 100%;
+			margin: 0 auto;
+			line-height: .45rem;
+			text-align: center;
+		}
+		.active{
+			background-color:#d2daec
+		}
+		.mui-table-view{
+			padding-left: 10px
+		}
+		.list{
+			border-bottom: 1px solid #c8c7cc;
+			display:block;
+			line-height: 40px
+		}
+		</style>
+</head>
+
+<body class="addAll">
+	<header class="commen-header">
+		<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+		<div class="title">选择城市</div>
+	</header>
+
+	<form class="mui-input-group homeAd" action="">
+		<div class="mui-input-row" id="HomeS">
+			<label class="mui-navigate-right" href="#"><span>省/市<i style="color:#f00">*</i></span></label>
+			<input class="proS choose" id="selJob" placeholder="请选择" readonly="readonly" name="workCity" />
+			<!--<select name="select" id="select_k1" class="proS">
+				<option>请选择</option>
+			</select>-->
+		</div>
+	</form>
+	<h4 class="carInfo">经销商列表</h4>
+	<ul class="mui-table-view"></ul>
+	<p class="zwxx">暂无信息</p>
+	<div class="foterBoten">
+		<a href="car.html">确定</a>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/global.js?v=2" type="text/javascript"></script>
+<script src="../js/mui.js?v=3" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/picker.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://acs.gwmfc.com/Scripts/code_A.js" charset="utf-8"></script>
+<script src="js/wechatapplication.js"></script>
+<script src="js/chooseCity.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$("#selJob").focus(function () {
+		document.activeElement.blur();
+	});
+	$("#selJob1").focus(function () {
+		document.activeElement.blur();
+	});
+</script>
+<script>
+	
+</script>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>长城汽车金融</title>
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<link rel="stylesheet" href="../css/style.css">	
+		<link rel="stylesheet" href="../Mui/css/mui.css" />	
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=63566119" charset="UTF-8"></script>
+	</head>
+	
+	<body>
+		<header class="commen-header">
+		<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+		<div class="title">贷款申请</div>	
+	</header>
+		<div class="order_flow ">
+		<label>
+			<span >1</span>
+			<p>注册</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span >2</span>
+			<p>贷款车型</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span class="fir">3</span>
+			<p>个人信息</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span>4</span>
+			<p>完成申请</p>
+		</label>
+	</div>
+	<h4 class="carInfo">个人工作信息</h4>
+	<div class="mainInfo">
+		<form class="mui-input-group" action="">
+		    <div class="mui-input-row">
+		        <label>单位名称<i>*</i></label>
+		        <input type="text" class="mui-input-clear workInfos" placeholder="请填写详细的单位名称" id="workPlaceName" name="workPlaceName">
+		    </div>
+		    <div class="mui-input-row">
+			<label>单位规模<i>*</i></label>
+			<div class="mui-numbox" data-numbox-step='50' data-numbox-min='0' data-numbox-max='1000000'>	
+			    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+			    <input class="mui-input-numbox workNum" type="number" id="workScale" name="workScale" />
+			    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>行业类型<i>*</i></span></label>				
+			<select name="industryName" id="select_k1" class="industry">
+				<option>请选择</option>
+			</select>
+		</div>	
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>雇佣类型<i>*</i></span></label>				
+			<select name="hireType" id="select_k1" class="hire">
+				<option>请选择</option>
+			</select>
+		</div>	
+		<div class="carStyle jobSt">	
+			<label class="carStyleJob" href="#"><span>职业类型<i>*</i></span></label>
+			<!-- <textarea class="workNum" id="selJob"  value="请选择" name="jobType" readonly="readonly" placeholder="请选择"/></textarea>-->
+			<span  role="button" id="selJob">请选择</span>
+		</div>
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right" href="#"><span>职位<i>*</i></span></label>				
+			<select name="jobLevel" id="select_k1" class="job">
+				<option>请选择</option>
+			</select>
+		</div>
+		 <div class="mui-input-row">
+			<label>本人月收入<i>*</i></label>
+			<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='1000000'>	
+			    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+			    <input class="mui-input-numbox mineMoney" type="number" id="monthSalary" name="monthSalary" />
+			    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>
+		 <div class="mui-input-row ">
+			<label>家庭其它月收入</label>
+			<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='1000000'data-numbox-step='500'>	
+			    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+			    <input class="mui-input-numbox homeMoney" type="number" id="homeSalary" name="homeSalary" />
+			    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>
+		 <div class="mui-input-row ">
+			<label>家庭月支出<i>*</i></label>
+			<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='1000000'>	
+			    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+			    <input class="mui-input-numbox monthMoney" type="number" id="homePost" name="homePost"/>
+			    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>
+			 <div class="mui-input-row ">
+			<label>未结清贷款<i>*</i></label>
+			<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='1000000'>	
+			    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+			    <input class="mui-input-numbox" type="number"  id="OutstandingLoan" name="OutstandingLoan"/>
+			    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>
+		 <div class="mui-input-row ">
+			<label>每月还款<i>*</i></label>
+			<div class="mui-numbox" data-numbox-step='500' data-numbox-min='0' data-numbox-max='1000000'>	
+			    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+			    <input class="mui-input-numbox" type="number" id="monthRepay" name="monthRepay"/>
+			    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>		
+		</form>		
+	</div>
+	<div class="commen-bottom"> 
+			<a href="javascript:void(0)" onclick="backClick()" class="pre">返回个人基本信息</a>
+			<a class="next">完善紧急联系人信息</a>			
+	</div>			
+	</body>
+	  	<script type="text/javascript" 	src="../js/jquery.min.js"></script>
+	  	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript"  src="../js/global.js?t=12"></script>
+	  	<script src="../js/picker.min.js" type="text/javascript" charset="utf-8"></script>
+	  	<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://acs.gwmfc.com/Scripts/code_A.js" charset="utf-8"></script>
+	  	<script src="js/workInfo.js"></script>	  	
+</html>

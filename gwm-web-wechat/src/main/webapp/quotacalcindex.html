@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161024">
+  	<style type="text/css">
+  		/*.edcs .question input[type="radio"]:hover{border:#d73240 solid 1px}*/
+  	</style>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/touchslide.js"></script><!-- 轮播js -->
+	<script type="text/javascript" src="js/global.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"	src="appjs/jssdktest.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+	<script>
+		$(function(){
+			$("#submit-btn").click(function(){
+				window.location.href = "./quotacalc.html";
+			});
+			var openid = sessionStorage.openid;
+			if(undefined == openid || "" == openid){
+				var code = getParam("code");
+				if(code){
+					$.showLoadMsg("加载中，请稍后...");
+					$.JsonSRpc(baseUrl+"/snsapibase", {code:code}, function(data){
+						$.hideLoadMsg();
+						if(data.errcode&&"0"==data.errcode){
+							openid = data.openid;
+							if(openid==undefined||""==openid){
+								message("信息获取失败!", function(flag){
+									wx.closeWindow();
+								});
+							}else{
+								sessionStorage.setItem("openid", openid);
+							}
+						}else{
+							message("获取用户信息失败！", function(flag){
+								wx.closeWindow();
+							});
+						}
+					});
+				}else{
+					message("获取信息失败，请重新进入页面", function(flag){
+						wx.closeWindow();
+					})
+				}
+			}
+		});
+	</script>
+</head>
+<body class="h100">
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">额度测算</div>
+</header>
+<!-- 通用header end -->
+<div class="edcs-start" style="height:101.6%">
+	<h2>测测我的贷款额度</h2>
+	<h3>仅需回答<em>9</em>个问题<br>
+<em>1</em>分钟轻松获得您的贷款额度</h3>
+<button class="submit-btn" id="submit-btn" style="bottom: .25rem;">开始测算</button>
+</div>
+</body>
+</html>

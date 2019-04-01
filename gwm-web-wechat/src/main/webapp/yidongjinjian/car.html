@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<link rel="stylesheet" href="../Mui/css/mui.css" />		
+	<link rel="stylesheet" href="../css/style.css">		
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=63566119" charset="UTF-8"></script>
+	</head>
+	<body>
+	<header class="commen-header">
+		<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+		<div class="title">贷款申请</div>	
+	</header>
+	<div class="order_flow ">
+		<label>
+			<span >1</span>
+			<p>注册</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span class="fir">2</span>
+			<p>贷款车型</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span>3</span>
+			<p>个人信息</p>
+		</label>
+		<p class="line"></p>
+		<label>
+			<span>4</span>
+			<p>完成申请</p>
+		</label>
+	</div>
+	<form action="">
+	<h4 class="carInfo">意向车型信息</h4>
+	<div class="mainInfo cars">	
+	<div class="mui-input-group">
+		<div class="mui-input-row">	
+			<label><span>经销商</span></label>	
+			<span class="jxsname choose"></span>			
+		</div>	
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right"><span>品牌<i>*</i></span></label>	
+			<select name="carName" id="select_brand" class="carName"  onchange="getModel()">	
+				<option selected value='-1'>请选择</option>
+			</select>
+		</div>	
+		<div class="mui-input-row">	
+			<label class="mui-navigate-right"><span>车型<i>*</i></span></label>	
+			<select name="carType" id="select_model" class="carSty" onchange="getStyle()" >
+				<option selected value='-1'>请选择</option>
+			</select>
+		</div>	
+		<div class=" carStyle">	
+			<label ><span>款式<i>*</i></span></label>	
+			<select name="carStyle" id="select_style" class="carKs" >				
+					<option selected value='-1'>请选择</option>	
+			</select>
+		</div>	
+	</div>	
+</div>
+</form>
+<div class="commen-bottom car"> 
+	<a href="javascript:void(0)" onclick="backClick()" class="pre">上一步</a>	  
+	<a class="next">下一步</a>
+</div>
+</div>
+	</body>
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/global.js?v=1" type="text/javascript"></script>
+	<script src="https://acs.gwmfc.com/Scripts/code_A.js" charset="utf-8"></script>
+	<script src="js/car.js?v=1"type="text/javascript"></script>
+	<script src="js/wechatapplication.js"></script>
+	<script src="js/Jquery.md5.js"></script>
+	<script>
+		$(document).ready(function(){
+			var name=localStorage.JXSName;
+			$(".jxsname").html(name)						
+		})
+	</script>
+</html>

@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gwm</groupId>
+  <artifactId>gwm-aggregation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>gwm-aggregation</name>
+  <description>maven聚合工程</description>
+  <modules>
+  	<module>gwm-db-entity</module>
+  	<module>gwm-db-dao</module>
+  	<module>gwm-common</module>
+  	<module>gwm-web-service</module>
+  	<module>gwm-web-wechat</module>
+  	<module>gwm-web-duanxin</module>
+  	<module>gwm-web-site</module>
+  	<module>gwm-web-manager</module>
+  </modules>
+   <parent>  
+   		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.3.5.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+    <spring.version>4.2.3.RELEASE</spring.version>  
+    <spring.boot.version>1.3.0.RELEASE</spring.boot.version>  
+  </properties>  
+
+  <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Brixton.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+  </dependencyManagement>
+  <dependencies>
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	</dependency>
+	<!-- 数据库连接池 -->
+	<dependency>
+           <groupId>com.alibaba</groupId>
+           <artifactId>druid</artifactId>
+           <version>1.0.18</version>
+    </dependency>
+     <!-- Spring jdbctemplate支持 -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>org.apache.tomcat</groupId>
+		            <artifactId>tomcat-jdbc</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+  </dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

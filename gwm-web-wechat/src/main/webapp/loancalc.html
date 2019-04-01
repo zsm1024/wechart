@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长城汽车金融</title>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+  	<link rel="stylesheet" href="css/style.css?v=20161201">
+ 	<link rel="stylesheet" href="css/rangeSlider.css"><!-- 数值范围 css -->
+	<link rel="stylesheet" href="css/rangeSlider.skin.css"><!-- 数值范围 css -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/rangeSlider.min.js"></script><!-- 数值范围 js -->
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/cc_data.js"></script>
+	<script type="text/javascript" src="js/hf_data.js"></script>
+	<script type="text/javascript" src="js/wey.js"></script>
+	<script type="text/javascript" src="js/ora.js"></script>
+	<script type="text/javascript" src="appjs/calculatmethod.js"></script>
+	<script type="text/javascript" src="appjs/loancalc.js"></script>
+	<script type="text/javascript" src="https://tajs.qq.com/stats?sId=60108162" charset="UTF-8"></script>
+</head>
+<body>
+<!-- 通用header begin -->
+<header class="commen-header">
+	<div class="go-back"><a href="javascript:void(0)" onclick="backClick()"></a></div>
+	<div class="title">贷款计算</div>
+</header>
+<!-- 通用header end -->
+<div class="commen-form mt2">
+	<div class="form-item">
+		<label>品牌：</label>
+		<select id="brand" class="w50p">
+			<option value="-1">请选择品牌</option>
+			<option value="1">长城</option>
+			<option value="2">哈弗</option>
+			<option value="3">WEY</option>
+			<option value="4">欧拉</option>
+		</select>
+		<select id="models" class="w50p">
+			<option value="-1">请选择车型</option>
+		</select>
+	</div>
+	<div class="form-item">
+		<label>车款：</label>
+		<select id="car_style">
+			<option value="-1">请选择车款</option>
+		</select>
+	</div>
+	<div class="form-item">
+		<label>官方指导价（元）：</label>
+		<input id="priceInput" onblur="myPrice()" type="text" placeholder="请输入正确的价格">
+		<em id="price_warn"></em>
+	</div>
+	<div class="form-item">
+		<label>还款方式：</label>
+		<select id="loan_type">
+			<option value="3">等额本息</option>
+			<option value="2">等额本金</option>
+			<option value="1">弹性尾款</option>
+		</select>
+	</div>
+	<div class="form-item">
+		<label>首付比例：</label>
+		<div class="rangslider">
+			<input type="text" id="range_1" name="" value="" />
+			<script>
+				$("#range_1").ionRangeSlider({
+					postfix: "%",
+					min: 20,
+				    max: 70,
+				    from: 30,
+				    from_min: 5,
+				    to: 20,
+					});
+
+			</script>
+		</div>
+	</div>
+	<div class="form-item">
+		<label>还款期数：</label>
+		<div class="rangslider">
+			<input type="text" id="range_3" name="" value="" />
+			<script>
+				$("#range_3").ionRangeSlider({
+					postfix: "期",
+					min: 12,
+				    max: 60,
+				    from: 24
+					});
+
+			</script>
+		</div>
+	</div>
+	<div class="form-item" id="weikunli">
+		<label class="flex">尾款比例：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20%&nbsp;&nbsp;<input id="last_per" value="1" type="checkbox">&nbsp;&nbsp;25%</label>
+	</div>
+	<button id="startCalcute" class="submit-btn">开始计算</button>
+	<div class="count-result">
+		<dl>
+			<dt class="flex">
+				<span>首付金额（RMB）</span>
+				<span>贷款金额（RMB）</span>
+			</dt>
+			<dd class="flex">
+				<span id="sf_amt">0</span>
+				<span id="loan_amt">0</span>
+			</dd>
+		</dl>
+		<dl>
+			<dt class="flex">
+				<span>月供金额（RMB）</span>
+				<span>尾款金额（RMB）</span>
+			</dt>
+			<dd class="flex">
+				<span id="month_amt">0</span>
+				<span id="last_amt">0</span>
+			</dd>
+		</dl>
+	</div>
+	<button class="submit-btn" id="apply">立即申请</button>
+</div>
+
+</body>
+</html>
